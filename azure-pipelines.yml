@@ -49,3 +49,16 @@ steps:
   inputs:
     containerRegistry: 'Docker'
     command: 'login'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker'
+    repository: 'container'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker'
+    repository: 'container'
+    command: 'push'
