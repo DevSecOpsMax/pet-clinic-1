@@ -44,3 +44,8 @@ steps:
     projectName: 'pet-clinic-1'
     scanPath: '$(Build.SourcesDirectory)/build/libs'
     format: 'HTML'
+
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker'
+    command: 'login'
